@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "lead-form/Routes": [
+        "apps/lead-form/src/app/remote-entry/entry.routes.ts"
+      ],
+      "my-ui-lib": ["libs/my-ui-lib/src/index.ts"],
+      "mylib": ["libs/mylib/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
