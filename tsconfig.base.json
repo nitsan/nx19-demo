@@ -19,7 +19,8 @@
         "apps/lead-form/src/app/remote-entry/entry.routes.ts"
       ],
       "my-ui-lib": ["libs/my-ui-lib/src/index.ts"],
-      "mylib": ["libs/mylib/src/index.ts"]
+      "mylib": ["libs/mylib/src/index.ts"],
+      "@questionnaire": ["libs/questionnaire/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
