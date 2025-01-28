@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['lead-form'],
+  remotes: ['lead-form', 'questionnaire'],
 };
 
 export default config;
