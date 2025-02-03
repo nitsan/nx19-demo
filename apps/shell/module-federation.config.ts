@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['lead-form'],
+  remotes: ['lead-form', 'coverage-customization'],
 };
 
 export default config;
