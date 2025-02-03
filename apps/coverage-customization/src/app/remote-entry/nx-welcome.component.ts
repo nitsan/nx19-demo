@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { QuestionnaireComponent } from '@questionnaire';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, QuestionnaireComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -436,6 +437,7 @@ import { CommonModule } from '@angular/common';
             Welcome coverage-customization 👋
           </h1>
         </div>
+        <lib-questionnaire></lib-questionnaire>
         <!--  HERO  -->
         <div id="hero" class="rounded">
           <div class="text-container">
