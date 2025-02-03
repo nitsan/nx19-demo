@@ -1,11 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyUiLibComponent } from 'my-ui-lib';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule, MyUiLibComponent],
+  imports: [CommonModule],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -436,7 +435,6 @@ import { MyUiLibComponent } from 'my-ui-lib';
             <span> Hello there, </span>
             Welcome lead-form 👋
           </h1>
-          <lib-my-ui-lib></lib-my-ui-lib>
         </div>
         <!--  HERO  -->
         <div id="hero" class="rounded">
