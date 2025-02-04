@@ -1,10 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Button } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, Button, DialogModule, InputTextModule],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -436,6 +439,38 @@ import { CommonModule } from '@angular/common';
             Welcome coverage-customization 👋
           </h1>
         </div>
+        <p-button (onClick)="showDialog()" label="Open Dialog" />
+        <p-dialog
+          header="Edit Profile"
+          [modal]="true"
+          [(visible)]="visible"
+          [style]="{ width: '25rem' }"
+        >
+          <span class="p-text-secondary block mb-5"
+            >Update your information.</span
+          >
+          <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">Username</label>
+            <input
+              pInputText
+              id="username"
+              class="flex-auto"
+              autocomplete="off"
+            />
+          </div>
+          <div class="flex align-items-center gap-3 mb-5">
+            <label for="email" class="font-semibold w-6rem">Email</label>
+            <input pInputText id="email" class="flex-auto" autocomplete="off" />
+          </div>
+          <div class="flex justify-content-end gap-2">
+            <p-button
+              label="Cancel"
+              severity="secondary"
+              (onClick)="visible = false"
+            />
+            <p-button label="Save" (onClick)="visible = false" />
+          </div>
+        </p-dialog>
         <!--  HERO  -->
         <div id="hero" class="rounded">
           <div class="text-container">
@@ -870,4 +905,10 @@ nx g &#64;nx/angular:component ui/src/lib/button</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent {
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+  }
+}
