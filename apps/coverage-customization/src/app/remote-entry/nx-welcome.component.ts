@@ -2,12 +2,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Button } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
-import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule, Button, DialogModule, InputTextModule],
+  imports: [CommonModule, Button, DialogModule],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -446,22 +445,7 @@ import { InputTextModule } from 'primeng/inputtext';
           [(visible)]="visible"
           [style]="{ width: '25rem' }"
         >
-          <span class="p-text-secondary block mb-5"
-            >Update your information.</span
-          >
-          <div class="flex align-items-center gap-3 mb-3">
-            <label for="username" class="font-semibold w-6rem">Username</label>
-            <input
-              pInputText
-              id="username"
-              class="flex-auto"
-              autocomplete="off"
-            />
-          </div>
-          <div class="flex align-items-center gap-3 mb-5">
-            <label for="email" class="font-semibold w-6rem">Email</label>
-            <input pInputText id="email" class="flex-auto" autocomplete="off" />
-          </div>
+       
           <div class="flex justify-content-end gap-2">
             <p-button
               label="Cancel"
