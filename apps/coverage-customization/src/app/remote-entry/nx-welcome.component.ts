@@ -2,11 +2,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Button } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule, Button, DialogModule],
+  imports: [CommonModule, Button, DialogModule, RouterOutlet],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -445,7 +446,8 @@ import { DialogModule } from 'primeng/dialog';
           [(visible)]="visible"
           [style]="{ width: '25rem' }"
         >
-       
+          <router-outlet name="inner"></router-outlet>
+
           <div class="flex justify-content-end gap-2">
             <p-button
               label="Cancel"
