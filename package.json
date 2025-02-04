@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nx run-many --target=build --configuration=production",
     "build:affected": "nx affected --target=build --configuration=production",
+    "lint": "nx run-many --target=lint",
+    "test": "nx run-many --target=test",
     "serve": "nx serve shell",
     "serve:verbose": "nx serve shell --verbose"
   },
