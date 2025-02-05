@@ -4,22 +4,21 @@ import { AppsManagerService } from 'mylib';
 
 @Component({
   standalone: true,
-  imports: [RouterModule ],
+  imports: [RouterModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   exportAs: 'appRoot',
 })
 export class AppComponent implements OnInit {
-
   constructor(
     private router: Router,
     public appsManagerService: AppsManagerService
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.appsManagerService.event$.subscribe((outletUrl:string) => {
+    this.appsManagerService.event$.subscribe((outletUrl: string) => {
+      if (outletUrl) {
         this.router.navigate([
           {
             outlets: {
@@ -27,6 +26,9 @@ export class AppComponent implements OnInit {
             },
           },
         ]);
+      } else{
+        this.router.navigate([{ outlets: { modal: null } }]);
+      }
     });
   }
 

@@ -26,4 +26,8 @@ export const appRoutes: Route[] = [
     path: '',
     component: ShellComponent,
   },
+  {
+    path: '**',
+    component: ShellComponent,
+  },
 ];
