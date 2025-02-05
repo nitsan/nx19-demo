@@ -2,6 +2,17 @@ import { ModuleFederationConfig } from '@nx/webpack';
 
 const config: ModuleFederationConfig = {
   name: 'shell',
+  additionalShared: [
+    {
+      libraryName: 'mylib',
+      sharedConfig: {
+        requiredVersion: '*',
+        singleton: true,
+        strictVersion: true,
+        import: 'libs/mylib/src/index',
+      },
+    },
+  ],
   /**
    * To use a remote that does not exist in your current Nx Workspace
    * You can use the tuple-syntax to define your remote

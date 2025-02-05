@@ -1,14 +1,34 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { AppsManagerService } from 'mylib';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  exportAs: 'appRoot',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(
+    private router: Router,
+    public appsManagerService: AppsManagerService
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.appsManagerService.event$.subscribe((outletUrl:string) => {
+        this.router.navigate([
+          {
+            outlets: {
+              modal: outletUrl,
+            },
+          },
+        ]);
+    });
+  }
+
   title = 'shell';
 }

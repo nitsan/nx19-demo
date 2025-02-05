@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { LeadFormComponent } from './lead-form.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, LeadFormComponent],
   selector: 'app-lead-form-entry',
-  template: `<app-nx-welcome></app-nx-welcome>`,
+  template: `<lf-welcome></lf-welcome>`,
 })
 export class RemoteEntryComponent {}
