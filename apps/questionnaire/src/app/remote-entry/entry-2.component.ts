@@ -5,11 +5,12 @@ import { AppsManagerService } from 'mylib';
 @Component({
   standalone: true,
   imports: [CommonModule],
-  selector: 'app-questionnaire-entry',
-  template: `Questionnaire CLU component inside questionnaire
-    <button (click)="closeAux()">close aux</button>`,
+  selector: 'app-questionnaire-modal',
+  styleUrl: './modal.scss',
+  templateUrl: './modal.html',
+
 })
-export class RemoteEntryComponent2 {
+export class ModalComponent {
   constructor(private appsManagerService: AppsManagerService) {}
 
   closeAux() {
