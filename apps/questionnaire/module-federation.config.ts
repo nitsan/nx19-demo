@@ -15,6 +15,7 @@ const config: ModuleFederationConfig = {
   ],
   exposes: {
     './Routes': 'apps/questionnaire/src/app/remote-entry/entry.routes.ts',
+    './EntryComponent': 'apps/questionnaire/src/app/remote-entry/entry-3.component.ts',
   },
 };
 

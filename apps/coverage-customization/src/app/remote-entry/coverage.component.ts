@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AppsManagerService } from 'mylib';
@@ -71,6 +71,22 @@ import { AppsManagerService } from 'mylib';
         line-height: 2.25rem;
         margin-bottom: 0.5rem;
       }
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: left;
+      border: rgb(227, 227, 227) 1px solid;
+      background-color: white;
+      border-radius: 0.3rem;
+      overflow: auto;
+      z-index: 2;
+    }
+    .content{
+      height: 400px;
+      width: 400px;
+    }
     </style>
     <div class="wrapper">
       <div class="container">
@@ -86,6 +102,16 @@ import { AppsManagerService } from 'mylib';
         <div>
           <button (click)="clicked('questionnaire')">click to load regular questionnaire</button>
         </div>
+        <div>
+          <button (click)="showDynamic()">click to questionnaire module no route change</button>
+        </div>
+      </div>
+  
+  <!-- *ngIf did not work because element has to exist in the DOM for the dynamic component to be created -->
+      <div [hidden]="!display" class="modal content"> <h4>This modal is part of COVERAGE-CUSTOMIZATION module</h4>
+            <div #dynamicContent></div>
+             <h4>This button is part of COVERAGE-CUSTOMIZATION module</h4>
+            <button (click)="display = false;"> close </button>
       </div>
     </div>
   `,
@@ -96,7 +122,17 @@ export class CoverageComponent {
   constructor(private appsManagerService: AppsManagerService) {
   }
 
+  display = false;
+
   clicked(outletUrl: string) {
     this.appsManagerService.setOutletUrl(outletUrl);
+  }
+
+
+  @ViewChild('dynamicContent', { read: ViewContainerRef }) dynamicContent!: ViewContainerRef;
+
+  showDynamic() {
+    this.display = true;
+    this.appsManagerService.setDynamicContent(this.dynamicContent);
   }
 }
