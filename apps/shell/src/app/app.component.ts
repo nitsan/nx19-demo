@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AppsManagerService } from 'mylib';
+import { loadRemoteModule } from '@nx/angular/mf';
 
 @Component({
   standalone: true,
@@ -28,6 +29,14 @@ export class AppComponent implements OnInit {
         ]);
       } else{
         this.router.navigate([{ outlets: { modal: null } }]);
+      }
+    });
+    this.appsManagerService.event2$.subscribe(async(element:ViewContainerRef | null) => {
+      if (element) {
+        const module = await loadRemoteModule('questionnaire', './EntryComponent');
+        const component = module.RemoteComponent;
+        element.clear(); // optional... depends on the needs..
+        element.createComponent(component);
       }
     });
   }
