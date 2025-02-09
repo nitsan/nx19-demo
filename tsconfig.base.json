@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@questionnaire-lib": ["libs/questionnaire-lib/src/index.ts"],
       "coverage-customization/Routes": [
         "apps/coverage-customization/src/app/remote-entry/entry.routes.ts"
       ],
