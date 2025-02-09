@@ -23,7 +23,10 @@
       ],
       "my-ui-lib": ["libs/my-ui-lib/src/index.ts"],
       "mylib": ["libs/mylib/src/index.ts"],
-      "@questionnaire": ["libs/questionnaire/src/index.ts"]
+      "@questionnaire": ["libs/questionnaire/src/index.ts"],
+      "questionnaire/Routes": [
+        "apps/questionnaire/src/app/remote-entry/entry.routes.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
