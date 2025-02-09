@@ -65,6 +65,7 @@
         "publicHost": "http://localhost:4200",
         "devRemotes": [
           "coverage-customization",
+          "questionnaire",
           "lead-form"
         ]
       },
