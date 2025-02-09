@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     });
     this.appsManagerService.event2$.subscribe(async(element:ViewContainerRef | null) => {
       if (element) {
-        const module = await loadRemoteModule('questionnaire', './EntryComponent');
+        const module = await import('questionnaire/EntryComponent');
         const component = module.RemoteComponent;
         element.clear(); // optional... depends on the needs..
         element.createComponent(component);

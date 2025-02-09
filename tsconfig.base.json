@@ -25,6 +25,9 @@
       "mylib": ["libs/mylib/src/index.ts"],
       "questionnaire/Routes": [
         "apps/questionnaire/src/app/remote-entry/entry.routes.ts"
+      ],
+      "questionnaire/EntryComponent": [
+        "apps/questionnaire/src/app/remote-entry/entry-3.component.ts"
       ]
     }
   },
