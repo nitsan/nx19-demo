@@ -1,4 +1,4 @@
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { ShellComponent } from './shell.component';
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
@@ -13,11 +13,26 @@ export const appRoutes: Route[] = [
       import('coverage-customization/Routes').then((m) => m.remoteRoutes),
   },
   {
+    path: 'questionnaire',
+    outlet:'modal',
+    loadChildren: () =>
+      import('questionnaire/Routes').then((m) => m.remoteRoutes),
+  },
+  {
+    path: 'questionnaire',
+    loadChildren: () =>
+      import('questionnaire/Routes').then((m) => m.remoteRoutes),
+  },
+  {
     path: 'lead-form',
     loadChildren: () => import('lead-form/Routes').then((m) => m.remoteRoutes),
   },
   {
     path: '',
-    component: NxWelcomeComponent,
+    component: ShellComponent,
+  },
+  {
+    path: '**',
+    component: ShellComponent,
   },
 ];

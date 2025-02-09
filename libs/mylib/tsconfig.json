@@ -7,7 +7,10 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "myLib": ["libs/mylib/src/index.ts"]
+    }
   },
   "files": [],
   "include": [],

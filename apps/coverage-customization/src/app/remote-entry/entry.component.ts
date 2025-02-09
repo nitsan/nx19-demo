@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { CoverageComponent } from './coverage.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, CoverageComponent],
   selector: 'app-coverage-customization-entry',
-  template: `<app-nx-welcome></app-nx-welcome>`,
+  template: `<coverage-welcome></coverage-welcome>`,
 })
 export class RemoteEntryComponent {}
