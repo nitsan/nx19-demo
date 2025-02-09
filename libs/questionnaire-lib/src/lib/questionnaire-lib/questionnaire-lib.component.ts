@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'lib-questionnaire',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './questionnaire.component.html',
-  styleUrl: './questionnaire.component.css',
+  templateUrl: './questionnaire-lib.component.html',
+  styleUrl: './questionnaire-lib.component.css',
 })
-export class QuestionnaireComponent {}
+export class QuestionnaireLibComponent {}

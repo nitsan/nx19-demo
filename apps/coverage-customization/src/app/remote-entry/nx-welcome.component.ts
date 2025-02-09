@@ -1,11 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { QuestionnaireComponent } from '@questionnaire';
+import { QuestionnaireLibComponent } from '@questionnaire-lib';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule, QuestionnaireComponent],
+  imports: [CommonModule, QuestionnaireLibComponent],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *

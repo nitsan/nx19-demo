@@ -1,8 +1,8 @@
 export default {
-  displayName: 'questionnaire',
+  displayName: 'questionnaire-lib',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/questionnaire',
+  coverageDirectory: '../../coverage/libs/questionnaire-lib',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
