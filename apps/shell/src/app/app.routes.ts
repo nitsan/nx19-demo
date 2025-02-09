@@ -13,6 +13,11 @@ export const appRoutes: Route[] = [
       import('coverage-customization/Routes').then((m) => m.remoteRoutes),
   },
   {
+    path: 'questionnaire',
+    loadChildren: () =>
+      import('questionnaire/Routes').then((m) => m.remoteRoutes),
+  },
+  {
     path: 'lead-form',
     loadChildren: () => import('lead-form/Routes').then((m) => m.remoteRoutes),
   },
