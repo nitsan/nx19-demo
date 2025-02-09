@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nx run-many --target=build --configuration=production",
     "build:affected": "nx affected --target=build --configuration=production",
+    "lint": "nx run-many --target=lint",
+    "test": "nx run-many --target=test",
     "serve": "nx serve shell",
     "serve:verbose": "nx serve shell --verbose"
   },
@@ -70,6 +72,7 @@
     "@angular/platform-browser": "~18.2.0",
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
+    "primeng": "^17.18.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rxjs": "~7.8.0",
