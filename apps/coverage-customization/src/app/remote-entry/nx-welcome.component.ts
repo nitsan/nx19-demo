@@ -1,12 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Button } from 'primeng/button';
-import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-nx-welcome',
   standalone: true,
-  imports: [CommonModule, Button, DialogModule],
+  imports: [CommonModule],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -438,23 +436,6 @@ import { DialogModule } from 'primeng/dialog';
             Welcome coverage-customization 👋
           </h1>
         </div>
-        <p-button (onClick)="showDialog()" label="Open Dialog" />
-        <p-dialog
-          header="Edit Profile"
-          [modal]="true"
-          [(visible)]="visible"
-          [style]="{ width: '25rem' }"
-        >
-       
-          <div class="flex justify-content-end gap-2">
-            <p-button
-              label="Cancel"
-              severity="secondary"
-              (onClick)="visible = false"
-            />
-            <p-button label="Save" (onClick)="visible = false" />
-          </div>
-        </p-dialog>
         <!--  HERO  -->
         <div id="hero" class="rounded">
           <div class="text-container">
@@ -889,10 +870,4 @@ nx g &#64;nx/angular:component ui/src/lib/button</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {
-  visible: boolean = false;
-
-  showDialog() {
-    this.visible = true;
-  }
-}
+export class NxWelcomeComponent {}
